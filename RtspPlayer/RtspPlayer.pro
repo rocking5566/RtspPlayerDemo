@@ -18,13 +18,10 @@ win32 {
     QMAKE_CXXFLAGS += /Zi
     contains(QMAKE_TARGET.arch, x86_64) {
         QMAKE_LFLAGS += /MACHINE:X64
-        UI_DIR = ./GeneratedFiles/x64
-        RCC_DIR = ./GeneratedFiles/x64
         LIBS += -L$${VLC_PATH}/lib -llibvlc.x64 -llibvlccore.x64
         
         CONFIG(debug, debug|release) {
             DESTDIR = ./bin/x64/Debug
-            MOC_DIR = ./GeneratedFiles/x64/Debug
             LIBS += -L$${OPENCV_PATH}/lib -lopencv_core249d -lopencv_highgui249d
             QMAKE_LFLAGS_WINDOWS += /LARGEADDRESSAWARE
         }
