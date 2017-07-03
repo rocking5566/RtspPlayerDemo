@@ -18,7 +18,7 @@ win32 {
     QMAKE_CXXFLAGS += /Zi
     contains(QMAKE_TARGET.arch, x86_64) {
         QMAKE_LFLAGS += /MACHINE:X64
-        LIBS += -L$${VLC_PATH}/lib -llibvlc.x64 -llibvlccore.x64
+        LIBS += -L$${VLC_PATH}/lib/win64 -llibvlc.x64 -llibvlccore.x64
         
         CONFIG(debug, debug|release) {
             DESTDIR = ./bin/x64/Debug
