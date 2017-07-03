@@ -10,6 +10,9 @@
   - QT 5.7
   - LibVlc 2.2.2
   - OpenCV 2.4.9
+  
+> You can also downlaod the compiled binary [here](https://drive.google.com/drive/folders/0B1Mq7kkwjPxLWXZsSzUyOXVVWlU?usp=sharing).
+
 ### Windows Environment
   - Visual studio 2013 with x64 tool chain
 
