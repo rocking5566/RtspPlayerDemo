@@ -1,6 +1,6 @@
 #include "PlayerView.h"
 #include "Util.h"
-#include "opencv2\opencv.hpp"
+#include "opencv2/opencv.hpp"
 #include <QInputDialog>
 #include <string>
 #include <QThread>
