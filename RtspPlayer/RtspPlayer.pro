@@ -22,12 +22,12 @@ win32 {
         
         CONFIG(debug, debug|release) {
             DESTDIR = ./bin/x64/Debug
-            LIBS += -L$${OPENCV_PATH}/lib -lopencv_core249d -lopencv_highgui249d
+            LIBS += -L$${OPENCV_PATH}/lib/win64 -lopencv_core249d -lopencv_highgui249d
             QMAKE_LFLAGS_WINDOWS += /LARGEADDRESSAWARE
         }
         else {
             DESTDIR = ./bin/x64/Release
-            LIBS += -L$${OPENCV_PATH}/lib -lopencv_core249 -lopencv_highgui249
+            LIBS += -L$${OPENCV_PATH}/lib/win64 -lopencv_core249 -lopencv_highgui249
             QMAKE_LFLAGS_WINDOWS += /debug /opt:ref /MAP /MAPINFO:EXPORTS /LARGEADDRESSAWARE
         }
     }
