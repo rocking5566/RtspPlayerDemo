@@ -8,9 +8,15 @@
 
 namespace CVHelper
 {
-    cv::Mat3b QImage2Mat(const QImage &src);
-    QImage Mat2QImage(const cv::Mat4b &src);
-    QImage Mat2QImage(const cv::Mat_<double> &src);
+    inline cv::Mat QImage2Mat(const QImage &src)
+    {
+        return cv::Mat(cv::Size(src.width(), src.height()), CV_8UC4, (void*)src.bits());
+    }
+
+    inline QImage Mat2QImage(const cv::Mat &src)
+    {
+        return QImage(src.data, src.cols, src.rows, QImage::Format_ARGB32);
+    }
 
     inline cv::Vec3b QColor2Vec(const QColor &src)
     {

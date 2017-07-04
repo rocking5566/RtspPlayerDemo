@@ -119,6 +119,6 @@ void CPlayerView::Render_cb(void *opaque, void *picture)
     imshow("Opencv Player", img);
     waitKey(1);
 
-    QImage qimg = CVHelper::Mat2QImage((Mat4b)img);
+    QImage qimg = CVHelper::Mat2QImage(img);
     obj->m_ui.RenderWidget->setPixmap(qimg);
 }
