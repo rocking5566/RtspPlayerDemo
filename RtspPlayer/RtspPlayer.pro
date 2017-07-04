@@ -15,19 +15,18 @@ INCLUDEPATH += $${VLC_PATH}/include \
 
 win32 {
     QMAKE_CXXFLAGS += /Zi
-    CONFIG += debug_and_release build_all
     contains(QMAKE_TARGET.arch, x86_64) {
         QMAKE_LFLAGS += /MACHINE:X64
-        LIBS += -L$${VLC_PATH}/lib/win64 -llibvlc.x64 -llibvlccore.x64
+        LIBS += -L$${VLC_PATH}/lib -llibvlc.x64 -llibvlccore.x64
         
         CONFIG(debug, debug|release) {
             DESTDIR = ./bin/x64/Debug
-            LIBS += -L$${OPENCV_PATH}/lib/win64 -lopencv_core249d -lopencv_highgui249d
+            LIBS += -L$${OPENCV_PATH}/lib -lopencv_core249d -lopencv_highgui249d
             QMAKE_LFLAGS_WINDOWS += /LARGEADDRESSAWARE
         }
         else {
             DESTDIR = ./bin/x64/Release
-            LIBS += -L$${OPENCV_PATH}/lib/win64 -lopencv_core249 -lopencv_highgui249
+            LIBS += -L$${OPENCV_PATH}/lib -lopencv_core249 -lopencv_highgui249
             QMAKE_LFLAGS_WINDOWS += /debug /opt:ref /MAP /MAPINFO:EXPORTS /LARGEADDRESSAWARE
         }
     }
@@ -46,8 +45,7 @@ win32 {
     }
 }
 
-linux-g++-64
-{
+linux-g++-64 {
     LIBS += -L/usr/lib/ -lvlc
     LIBS += -L/usr/local/lib -lopencv_highgui -lopencv_core -lopencv_imgproc
 }
