@@ -108,17 +108,12 @@ void CPlayerView::HandleStream_cb(void *opaque, void *picture, void *const *plan
     Q_UNUSED(picture);
     Q_UNUSED(planes);
     // TODO - image processing
-    //Mat img(Size(VIDEO_WIDTH, VIDEO_HEIGHT), CV_8UC4, picture);
+    // Mat img(Size(VIDEO_WIDTH, VIDEO_HEIGHT), CV_8UC4, picture);
 }
 
 void CPlayerView::Render_cb(void *opaque, void *picture)
 {
     CPlayerView* obj = (CPlayerView*)opaque;
-
-    Mat img(Size(VIDEO_WIDTH, VIDEO_HEIGHT), CV_8UC4, picture);
-    imshow("Opencv Player", img);
-    waitKey(1);
-
-    QImage qimg = CVHelper::Mat2QImage(img);
+    QImage qimg((uchar*)picture, VIDEO_WIDTH, VIDEO_HEIGHT, QImage::Format_ARGB32);;
     obj->m_ui.RenderWidget->setPixmap(qimg);
 }
