@@ -1,4 +1,4 @@
-# RtspPlayer
+# libvlc + QT + openCV Demo
 
     RtspPlayer is a cross platform desktop-based RTSP client.
   - We use LibVLC to get RTSP stream and decode the video
