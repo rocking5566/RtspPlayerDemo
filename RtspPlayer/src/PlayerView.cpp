@@ -65,11 +65,6 @@ void CPlayerView::OpenVideo(const char* rtsp)
 
     libvlc_media_t* pvlcMedia = libvlc_media_new_location(m_vlcInstance, rtsp);
     libvlc_media_player_set_media(m_vlcMediaPlayer, pvlcMedia);
-    
-    libvlc_media_track_info_t *tracks = NULL;
-    libvlc_media_parse(pvlcMedia);
-    libvlc_media_get_tracks_info(pvlcMedia, &tracks);
-    
     libvlc_media_release(pvlcMedia);
 
     libvlc_video_set_callbacks(m_vlcMediaPlayer, PreDecode_cb, HandleStream_cb, Render_cb, this);
