@@ -11,6 +11,9 @@
 #include <unistd.h>
 #endif // win32
 
+#define SAFE_DELETE(a) if( (a) != NULL ) delete (a); (a) = NULL;
+#define SAFE_DELETE_ARRAY(p) { if((p) != NULL) { delete[] (p);   (p)=NULL; } }
+
 inline void MSleep (int milliseconds)
 {
 #ifdef WIN32
