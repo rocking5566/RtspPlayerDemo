@@ -33,13 +33,14 @@ win32 {
     else {
         QMAKE_LFLAGS += /MACHINE:X86
         #Require x86 lib
-        #LIBS +=
+        LIBS += -L$${VLC_PATH}/lib -llibvlc -llibvlccore
+        
 		CONFIG(debug, debug|release) {
-            DESTDIR = Win32/Debug
+            DESTDIR = ./bin/win32/Debug
             QMAKE_LFLAGS_WINDOWS += /LARGEADDRESSAWARE
         }
         else {
-            DESTDIR = Win32/Release
+            DESTDIR = ./bin/win32/Release
             QMAKE_LFLAGS_WINDOWS += /debug /opt:ref /MAP /MAPINFO:EXPORTS /LARGEADDRESSAWARE
         }
     }
