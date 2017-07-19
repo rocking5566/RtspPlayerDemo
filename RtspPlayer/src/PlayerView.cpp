@@ -36,11 +36,11 @@ CPlayerView::CPlayerView(QWidget *parent)
 
 CPlayerView::~CPlayerView()
 {
-    SAFE_DELETE_ARRAY(m_videobuf);
+    libvlc_media_release(m_pvlcMedia);
     libvlc_media_player_stop(m_vlcMediaPlayer);
     libvlc_media_player_release(m_vlcMediaPlayer);
     libvlc_release(m_vlcInstance);
-    libvlc_media_release(m_pvlcMedia);
+    SAFE_DELETE_ARRAY(m_videobuf);
 }
 
 char* CPlayerView::GetVideoBuf() const
