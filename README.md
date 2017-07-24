@@ -20,5 +20,10 @@
 ## Ubuntu Development Environment
   - Ubuntu 16.0.04
   - Install QT 5.7.1 and Qt Creator. (https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
+  - Set QT5 to the default Qt version for development binaries like qmake
+```sh
+$ sudo apt-get install qt5-default
+```
+
   - Install libvlc-dev on Ubuntu. (http://www.rukspot.com/How_to_install_LibVLC_on_Ubuntu.html)
   - Install OpenCV on Ubuntu. (http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html)
