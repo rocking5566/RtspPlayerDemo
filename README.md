@@ -18,7 +18,7 @@
   - Visual Studio Add-in 2.0.0 for Qt5 MSVC 2013
 
 ## Ubuntu Development Environment
-  - Ubuntu 16.0.04
+  - Ubuntu 16.04
   - Install QT 5.7.1 and Qt Creator. (https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
   - Set QT5 to the default Qt version for development binaries like qmake
 ```sh
